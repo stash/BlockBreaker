@@ -1,0 +1,11 @@
+[*]
+end_of_line = crlf
+
+[{*.cs,*.vb}]
+# https://docs.microsoft.com/en-us/visualstudio/ide/editorconfig-code-style-settings-reference
+dotnet_style_require_accessibility_modifiers = never
+
+csharp_indent_case_contents = true
+
+[*.xml]
+indent_style = space
