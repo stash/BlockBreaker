@@ -638,6 +638,11 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: fa695c62da246fc40b1115e5f1f8b5e5, type: 3}
+    - target: {fileID: 82086179536480194, guid: 3be706303f1e07a4a820cef0a74b1a21,
+        type: 2}
+      propertyPath: BypassReverbZones
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3be706303f1e07a4a820cef0a74b1a21, type: 2}
   m_IsPrefabParent: 0
