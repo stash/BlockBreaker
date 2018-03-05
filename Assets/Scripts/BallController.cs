@@ -19,7 +19,6 @@ public class BallController : MonoBehaviour {
         if (launched) return;
         transform.position = paddle.transform.position + paddleToBall;
         if (Input.GetMouseButtonDown(0)) {
-            Debug.Log("Launch");
             GetComponent<Rigidbody2D>().isKinematic = false;
             GetComponent<Rigidbody2D>().velocity = Vector2.up * launchSpeed;
             launched = true;
