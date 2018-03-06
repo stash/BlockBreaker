@@ -18,6 +18,9 @@ public class Brick : MonoBehaviour {
     void Update() {
         if (timesHit >= maxHits) {
             DestroyObject(gameObject);
+            #region TODO: replace with scoring 
+            FindObjectOfType<SceneController>().NextLevel();
+            #endregion
         }
     }
 }
