@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class BallController : MonoBehaviour {
-    public PaddleController paddle;
     public Vector2 launchVelocity = new Vector2(1f, 10f);
 
+    private PaddleController paddle;
     private bool launched;
     private Vector3 paddleToBall;
 
     void Start() {
+        paddle = FindObjectOfType<PaddleController>(); // find active paddle
+
         paddleToBall = transform.position - paddle.transform.position;
         GetComponent<Rigidbody2D>().isKinematic = true;
     }
