@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine;
 
 public class Brick : MonoBehaviour {
-    public int maxHits = 0;
     public Sprite[] damages = new Sprite[0];
+    public int maxHits => damages.Length + 1;
 
     private int timesHit;
 
