@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHits: 1
+  damages: []
 --- !u!212 &212225215750694784
 SpriteRenderer:
   m_ObjectHideFlags: 1

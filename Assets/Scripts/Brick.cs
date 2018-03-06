@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 public class Brick : MonoBehaviour {
     public int maxHits = 0;
+    public Sprite[] damages = new Sprite[0];
 
     private int timesHit;
 
@@ -18,9 +21,9 @@ public class Brick : MonoBehaviour {
     void Update() {
         if (timesHit >= maxHits) {
             DestroyObject(gameObject);
-            #region TODO: replace with scoring 
-            FindObjectOfType<SceneController>().NextLevel();
-            #endregion
+        } else if (timesHit > 0) {
+            SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+            renderer.sprite = damages[timesHit - 1];
         }
     }
 }

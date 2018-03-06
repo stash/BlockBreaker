@@ -79,6 +79,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHits: 3
+  damages:
+  - {fileID: 21300004, guid: 2bdf0fad925422b4983e7c9016be5317, type: 3}
+  - {fileID: 21300004, guid: 6b069401278f2cd4397e777a3dacbc63, type: 3}
 --- !u!212 &212444018853244326
 SpriteRenderer:
   m_ObjectHideFlags: 1
