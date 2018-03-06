@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour {
     public PaddleController paddle;
-    public float launchSpeed = 10f;
+    public Vector2 launchVelocity = new Vector2(1f, 10f);
 
     private bool launched;
     private Vector3 paddleToBall;
@@ -17,12 +17,15 @@ public class BallController : MonoBehaviour {
     void Update() {
         // Until launch, ball follows paddle around.
         if (launched) return;
+
         transform.position = paddle.transform.position + paddleToBall;
+
         if (Input.GetMouseButtonDown(0)) {
-            GetComponent<Rigidbody2D>().isKinematic = false;
-            GetComponent<Rigidbody2D>().velocity = Vector2.up * launchSpeed;
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            // launch and relinquish control to physics subsystem
+            rb.isKinematic = false;
+            rb.velocity = launchVelocity;
             launched = true;
         }
-
     }
 }
