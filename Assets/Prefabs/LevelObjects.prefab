@@ -581,7 +581,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae63111fab816c948a01de664cac0d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneController: {fileID: 114810649257051878}
 --- !u!114 &114779600014999874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -593,7 +592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ffe4e6912b8546498d1e8997ff9b2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddle: {fileID: 114917544276396164}
   launchVelocity: {x: 1, y: 10}
 --- !u!114 &114810649257051878
 MonoBehaviour:

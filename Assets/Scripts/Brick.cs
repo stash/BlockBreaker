@@ -3,29 +3,32 @@ using System.Collections;
 using UnityEngine;
 
 public class Brick : MonoBehaviour {
+    public static int breakableCount = 0;
+    public static event Action OnDestroyed;
+
     public Sprite[] damages = new Sprite[0];
     public int maxHits => damages.Length + 1;
+    public bool isBreakable { get; private set; }
 
     private int timesHit;
 
     void Start() {
         timesHit = 0;
+        isBreakable = (tag == "Breakable");
+        if (isBreakable) breakableCount++;
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        BallController ball = collision.gameObject.GetComponent<BallController>();
-        if (ball == null) return;
-
-        if (tag == "Breakable")
-            timesHit++;
+        if (isBreakable) timesHit++;
     }
 
     void Update() {
         if (timesHit >= maxHits) {
-            DestroyObject(gameObject);
+            breakableCount--;
+            Destroy(gameObject);
+            OnDestroyed();
         } else if (timesHit > 0) {
-            SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-            renderer.sprite = damages[timesHit - 1];
+            GetComponent<SpriteRenderer>().sprite = damages[timesHit - 1];
         }
     }
 }
