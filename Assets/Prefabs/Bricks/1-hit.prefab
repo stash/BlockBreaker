@@ -79,6 +79,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damages: []
+  clip: {fileID: 8300000, guid: 7f1bcbac09705ff4fa4e62b9a85464ea, type: 3}
 --- !u!212 &212225215750694784
 SpriteRenderer:
   m_ObjectHideFlags: 1
