@@ -1,0 +1,18 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class Util {
+    public const float fieldWidth = 16f;
+    public const float paddleWidth = 1f;
+
+    public static float PositionToStereoPan(Vector3 position) {
+        return XPositionToStereoPan(position.x);
+    }
+    public static float PositionToStereoPan(Vector2 position) {
+        return XPositionToStereoPan(position.x);
+    }
+
+    public static float XPositionToStereoPan(float x) {
+        return (2f * x / fieldWidth) - 1f;
+    }
+}
