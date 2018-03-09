@@ -51,8 +51,8 @@ public class BallController : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D collision) {
         if (ending) return;
         Vector2 tweak = new Vector2(
-            Random.Range(-tweakMagnitude, tweakMagnitude), 
-            Random.Range(-tweakMagnitude, tweakMagnitude)
+            Random.Range(-tweakMagnitude, tweakMagnitude), // either x
+            Random.Range(0, 2f*tweakMagnitude) // always y+
         );
         rb.velocity += tweak;
     }
