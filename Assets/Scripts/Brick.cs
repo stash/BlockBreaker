@@ -9,7 +9,8 @@ public class Brick : MonoBehaviour {
     public Sprite[] damages = new Sprite[0];
     public int maxHits => damages.Length + 1;
     public bool isBreakable { get; private set; }
-    public AudioClip clip;
+    public AudioClip breakClip;
+    public AudioClip hitClip;
 
     private int timesHit;
 
@@ -22,27 +23,29 @@ public class Brick : MonoBehaviour {
     void OnCollisionEnter2D(Collision2D collision) {
         if (isBreakable) {
             timesHit++;
+            if (timesHit >= maxHits) {
+                BreakBrick();
+            } else {
+                GetComponent<SpriteRenderer>().sprite = damages[timesHit - 1];
+                PlayHitClip();
+            }
         } else {
-            PlayClip(); // will be the "unbreakable" clip in this case
+            PlayHitClip(); // will be the "unbreakable" clip in this case
         }
-    }
-
-    void Update() {
-        if (timesHit >= maxHits) {
-            BreakBrick();
-        } else if (timesHit > 0) {
-            GetComponent<SpriteRenderer>().sprite = damages[timesHit - 1];
-        }
-    }
-
-    void PlayClip() {
-        AudioSource.PlayClipAtPoint(clip, transform.position);
     }
 
     void BreakBrick() {
         breakableCount--;
-        PlayClip();
+        PlayBreakClip();
         Destroy(gameObject);
         OnDestroyed();
+    }
+
+    void PlayBreakClip() {
+        AudioSource.PlayClipAtPoint(breakClip, transform.position);
+    }
+
+    void PlayHitClip() {
+        AudioSource.PlayClipAtPoint(hitClip, transform.position);
     }
 }

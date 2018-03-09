@@ -2,8 +2,11 @@
 using UnityEngine;
 
 public class LoseCollider : MonoBehaviour {
-    public static Action OnBallLeftArea;
+    public static event Action OnBallLeftArea;
+    public AudioClip clip;
+
     void OnTriggerEnter2D(Collider2D collision) {
+        AudioSource.PlayClipAtPoint(clip, transform.position);
         OnBallLeftArea();
     }
 }
