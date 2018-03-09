@@ -12,6 +12,12 @@ public class BallController : MonoBehaviour {
 
         paddleToBall = transform.position - paddle.transform.position;
         GetComponent<Rigidbody2D>().isKinematic = true;
+
+        SceneController.OnSceneEnding += SceneController_OnSceneEnding;
+    }
+
+    void OnDestroy() {
+        SceneController.OnSceneEnding -= SceneController_OnSceneEnding;
     }
 
     void Update() {
@@ -27,5 +33,12 @@ public class BallController : MonoBehaviour {
             rb.velocity = launchVelocity;
             launched = true;
         }
+    }
+
+    void SceneController_OnSceneEnding() {
+        // Stop the ball if the scene is ending
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.isKinematic = true;
+        rb.velocity = Vector2.zero;
     }
 }

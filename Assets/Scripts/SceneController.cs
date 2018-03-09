@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
-    const float transitionDelay = 2f;
+    public static event Action OnSceneEnding; 
 
+    const float transitionDelay = 2f;
     WaitForSeconds wait;
 
     void Start() {
@@ -38,6 +40,7 @@ public class SceneController : MonoBehaviour {
     }
 
     public void NextLevel() {
+        OnSceneEnding();
         StartCoroutine(DelayedNextLevel());
     }
     IEnumerator DelayedNextLevel() {
@@ -48,6 +51,7 @@ public class SceneController : MonoBehaviour {
     }
 
     public void GameOver() {
+        OnSceneEnding();
         StartCoroutine(DelayedGameOver());
     }
     IEnumerator DelayedGameOver() {
