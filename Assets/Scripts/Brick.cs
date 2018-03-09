@@ -20,7 +20,11 @@ public class Brick : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
-        if (isBreakable) timesHit++;
+        if (isBreakable) {
+            timesHit++;
+        } else {
+            PlayClip(); // will be the "unbreakable" clip in this case
+        }
     }
 
     void Update() {
@@ -31,10 +35,14 @@ public class Brick : MonoBehaviour {
         }
     }
 
+    void PlayClip() {
+        AudioSource.PlayClipAtPoint(clip, transform.position);
+    }
+
     void BreakBrick() {
         breakableCount--;
+        PlayClip();
         Destroy(gameObject);
-        AudioSource.PlayClipAtPoint(clip, transform.position);
         OnDestroyed();
     }
 }
