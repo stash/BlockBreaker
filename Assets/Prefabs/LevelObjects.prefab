@@ -634,6 +634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchVelocity: {x: 1, y: 10}
+  tweakMagnitude: 0.1
 --- !u!114 &114810649257051878
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -656,6 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ff8d3e26c11394e9f247e36ca8bbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoPlay: 1
 --- !u!114 &114918374407172252
 MonoBehaviour:
   m_ObjectHideFlags: 1
