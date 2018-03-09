@@ -5,10 +5,10 @@ public class Util {
     public const float fieldWidth = 16f;
     public const float paddleWidth = 1f;
 
-    public static float PositionToStereoPan(Vector3 position) {
+    public static float XPositionToStereoPan(Vector3 position) {
         return XPositionToStereoPan(position.x);
     }
-    public static float PositionToStereoPan(Vector2 position) {
+    public static float XPositionToStereoPan(Vector2 position) {
         return XPositionToStereoPan(position.x);
     }
 
