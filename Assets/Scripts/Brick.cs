@@ -11,6 +11,7 @@ public class Brick : MonoBehaviour {
     public bool isBreakable { get; private set; }
     public AudioClip breakClip;
     public AudioClip hitClip;
+    public GameObject breakVFX;
 
     private int timesHit;
 
@@ -37,6 +38,7 @@ public class Brick : MonoBehaviour {
     void BreakBrick() {
         breakableCount--;
         PlayBreakClip();
+        PlayBreakVFX();
         Destroy(gameObject);
         OnDestroyed();
     }
@@ -47,5 +49,9 @@ public class Brick : MonoBehaviour {
 
     void PlayHitClip() {
         AudioSource.PlayClipAtPoint(hitClip, transform.position);
+    }
+
+    void PlayBreakVFX() {
+        GameObject.Instantiate(breakVFX, transform.position, Quaternion.identity);
     }
 }
