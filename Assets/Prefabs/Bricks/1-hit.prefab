@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damages: []
   breakClip: {fileID: 8300000, guid: 7f1bcbac09705ff4fa4e62b9a85464ea, type: 3}
-  hitClip: {fileID: 8300000, guid: 8670b2c4e95ed32449137ff821d10803, type: 3}
+  hitClip: {fileID: 8300000, guid: b4a7cc01cec87c0469f0d52438bf3512, type: 3}
 --- !u!212 &212225215750694784
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -84,7 +84,7 @@ MonoBehaviour:
   - {fileID: 21300008, guid: 8c088690648a8ee42a2860a4df149e53, type: 3}
   - {fileID: 21300008, guid: 6b069401278f2cd4397e777a3dacbc63, type: 3}
   breakClip: {fileID: 8300000, guid: 7f1bcbac09705ff4fa4e62b9a85464ea, type: 3}
-  hitClip: {fileID: 8300000, guid: 8670b2c4e95ed32449137ff821d10803, type: 3}
+  hitClip: {fileID: 8300000, guid: b4a7cc01cec87c0469f0d52438bf3512, type: 3}
 --- !u!212 &212205529219259522
 SpriteRenderer:
   m_ObjectHideFlags: 1
