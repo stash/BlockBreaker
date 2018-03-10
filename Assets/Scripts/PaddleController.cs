@@ -5,11 +5,9 @@ public class PaddleController : MonoBehaviour {
 
     BallController ball;
 
-    const float fieldUnits = 16f;
-    const float paddleWidth = 1f;
-    const float paddleHalfWidth = paddleWidth / 2f;
+    const float paddleHalfWidth = Util.paddleWidth / 2f;
     const float minMouseX = paddleHalfWidth;
-    const float maxMouseX = fieldUnits - paddleHalfWidth;
+    const float maxMouseX = Util.fieldWidth - paddleHalfWidth;
 
     void Start() {
         ball = FindObjectOfType<BallController>();
@@ -20,7 +18,7 @@ public class PaddleController : MonoBehaviour {
         if (autoPlay) {
             x = ball.transform.position.x;
         } else {
-            x = fieldUnits * Input.mousePosition.x / Screen.width;
+            x = Util.fieldWidth * Input.mousePosition.x / Screen.width;
         }
         MoveToX(x);
     }

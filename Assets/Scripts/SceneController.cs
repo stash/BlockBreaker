@@ -4,13 +4,23 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
-    public static event Action OnSceneEnding; 
+    public static event Action OnSceneEnding;
+    public bool hidePointer = true;
 
     const float transitionDelay = 2f;
     WaitForSeconds wait;
 
     void Start() {
         wait = new WaitForSeconds(transitionDelay);
+
+        if (hidePointer) {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Confined;
+        } else {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+
         Brick.OnDestroyed += Brick_OnDestroyed;
         LoseCollider.OnBallLeftArea += LoseCollider_OnBallLeftArea; 
     }
