@@ -52,6 +52,8 @@ public class Brick : MonoBehaviour {
     }
 
     void PlayBreakVFX() {
-        GameObject.Instantiate(breakVFX, transform.position, Quaternion.identity);
+        GameObject vfx = Instantiate(breakVFX, transform.position, Quaternion.identity);
+        ParticleSystem.MainModule main = vfx.GetComponent<ParticleSystem>().main;
+        main.startColor = GetComponent<SpriteRenderer>().color;
     }
 }
