@@ -11,7 +11,8 @@ public class Brick : MonoBehaviour {
     public bool isBreakable { get; private set; }
     public AudioClip breakClip;
     public AudioClip hitClip;
-    public GameObject breakVFX;
+    public GameObject[] breakVFX = new GameObject[0];
+    public float breakSaturation = 0.5f;
 
     private int timesHit;
 
@@ -52,8 +53,15 @@ public class Brick : MonoBehaviour {
     }
 
     void PlayBreakVFX() {
-        GameObject vfx = Instantiate(breakVFX, transform.position, Quaternion.identity);
-        ParticleSystem.MainModule main = vfx.GetComponent<ParticleSystem>().main;
-        main.startColor = GetComponent<SpriteRenderer>().color;
+        foreach (var prefab in breakVFX) {
+            GameObject vfx = Instantiate(prefab, transform.position, Quaternion.identity);
+            ParticleSystem.MainModule main = vfx.GetComponent<ParticleSystem>().main;
+            float h, s, v;
+            Color c = GetComponent<SpriteRenderer>().color;
+            Color.RGBToHSV(c, out h, out s, out v);
+            s *= breakSaturation;
+            main.startColor = Color.HSVToRGB(h, s, v);
+        }
+        
     }
 }

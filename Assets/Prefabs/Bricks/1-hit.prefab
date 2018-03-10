@@ -81,7 +81,10 @@ MonoBehaviour:
   damages: []
   breakClip: {fileID: 8300000, guid: 7f1bcbac09705ff4fa4e62b9a85464ea, type: 3}
   hitClip: {fileID: 8300000, guid: b4a7cc01cec87c0469f0d52438bf3512, type: 3}
-  breakVFX: {fileID: 1492819151540016, guid: 858f1c293cbcfc9458dd5f5faffbe2c4, type: 2}
+  breakVFX:
+  - {fileID: 1492819151540016, guid: 858f1c293cbcfc9458dd5f5faffbe2c4, type: 2}
+  - {fileID: 1046422619425860, guid: 6a61f1854e57f4347ac5b1d4c9c2cd81, type: 2}
+  breakColorAlpha: 0.25
 --- !u!212 &212225215750694784
 SpriteRenderer:
   m_ObjectHideFlags: 1
