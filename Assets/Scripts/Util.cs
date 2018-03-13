@@ -4,6 +4,7 @@ using System.Collections;
 public class Util {
     public const float fieldWidth = 16f;
     public const float paddleWidth = 1.5f;
+    public const float vfxZ = -9f;
 
     public static float XPositionToStereoPan(Vector3 position) {
         return XPositionToStereoPan(position.x);

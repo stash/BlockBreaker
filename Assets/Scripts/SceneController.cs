@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour {
     public static event Action OnSceneEnding;
+    public static event Action OnDeath;
     public bool hidePointer = true;
 
-    const float transitionDelay = 2f;
+    const float transitionDelay = 2.5f;
     WaitForSeconds wait;
 
     void Start() {
@@ -37,6 +38,7 @@ public class SceneController : MonoBehaviour {
     }
 
     void LoseCollider_OnBallLeftArea() {
+        OnDeath();
         GameOver();
     }
 

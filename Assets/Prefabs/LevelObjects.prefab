@@ -681,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   launchVelocity: {x: 1, y: 10}
   tweakMagnitude: 0.1
+  explodeVFX: {fileID: 1282339732843750, guid: c5a86a8d4a7e69c43a7b686a44db796f, type: 2}
 --- !u!114 &114810649257051878
 MonoBehaviour:
   m_ObjectHideFlags: 1

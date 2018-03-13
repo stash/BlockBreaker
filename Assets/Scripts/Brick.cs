@@ -54,7 +54,8 @@ public class Brick : MonoBehaviour {
 
     void PlayBreakVFX() {
         foreach (var prefab in breakVFX) {
-            GameObject vfx = Instantiate(prefab, transform.position, Quaternion.identity);
+            Vector3 position = new Vector3(transform.position.x, transform.position.y, Util.vfxZ);
+            GameObject vfx = Instantiate(prefab, position, Quaternion.identity);
             ParticleSystem.MainModule main = vfx.GetComponent<ParticleSystem>().main;
             float h, s, v;
             Color c = GetComponent<SpriteRenderer>().color;
