@@ -16,6 +16,8 @@ public class Brick : MonoBehaviour {
 
     private int timesHit;
 
+    private static ContactPoint2D[] contactPointTemp = new ContactPoint2D[1];
+
     void Start() {
         timesHit = 0;
         isBreakable = (tag == "Breakable");
@@ -32,14 +34,19 @@ public class Brick : MonoBehaviour {
                 PlayHitClip();
             }
         } else {
-            PlayHitClip(); // will be the "unbreakable" clip in this case
+            // will be the "unbreakable" clip/vfx in this case
+            PlayHitClip();
+            if (collision.GetContacts(contactPointTemp) >= 1) {
+                PlayBreakVFX(contactPointTemp[0].point);
+            }
+            
         }
     }
 
     void BreakBrick() {
         breakableCount--;
         PlayBreakClip();
-        PlayBreakVFX();
+        PlayBreakVFX(Util.V3to2(transform.position));
         Destroy(gameObject);
         OnDestroyed();
     }
@@ -52,9 +59,9 @@ public class Brick : MonoBehaviour {
         AudioSource.PlayClipAtPoint(hitClip, transform.position);
     }
 
-    void PlayBreakVFX() {
+    void PlayBreakVFX(Vector2 relativeTo) {
         foreach (var prefab in breakVFX) {
-            Vector3 position = new Vector3(transform.position.x, transform.position.y, Util.vfxZ);
+            Vector3 position = new Vector3(relativeTo.x, relativeTo.y, Util.vfxZ);
             GameObject vfx = Instantiate(prefab, position, Quaternion.identity);
             ParticleSystem.MainModule main = vfx.GetComponent<ParticleSystem>().main;
             float h, s, v;
