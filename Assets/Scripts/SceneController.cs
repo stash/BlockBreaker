@@ -7,12 +7,12 @@ public class SceneController : MonoBehaviour {
     public static event Action OnSceneEnding;
     public static event Action OnDeath;
     public bool hidePointer = true;
+    public float sceneEndDelay = 2.5f;
 
-    const float transitionDelay = 2.5f;
     WaitForSeconds wait;
 
     void Start() {
-        wait = new WaitForSeconds(transitionDelay);
+        wait = new WaitForSeconds(sceneEndDelay);
 
         if (hidePointer) {
             Cursor.visible = false;

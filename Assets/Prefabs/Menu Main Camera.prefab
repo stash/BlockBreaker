@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4912331658043120}
   - component: {fileID: 20400210847281134}
-  - component: {fileID: 124341050223175860}
   - component: {fileID: 81765084315522492}
   m_Layer: 0
   m_Name: Menu Main Camera
@@ -80,13 +79,6 @@ Camera:
   m_StereoSeparation: 0.022
 --- !u!81 &81765084315522492
 AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1404848898484568}
-  m_Enabled: 1
---- !u!124 &124341050223175860
-Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
