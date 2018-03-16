@@ -19,7 +19,6 @@ public class BallTweaker : MonoBehaviour {
 
         BallController ball = collision.gameObject.GetComponent<BallController>();
         if (!ball) return;
-        Debug.Log("tweak " + tweak.x + " " + tweak.y);
         ball.TweakVelocity(tweak);
     }
 }
