@@ -2,7 +2,6 @@
 
 public class BallController : MonoBehaviour {
     public Vector2 launchVelocity = new Vector2(1f, 10f);
-    public float tweakMagnitude = 0.2f;
     public GameObject explodeVFX;
 
     private PaddleController paddle;
@@ -46,7 +45,10 @@ public class BallController : MonoBehaviour {
 
     public void TweakVelocity(Vector2 tweak) {
         if (ending) return;
+        float before = rb.velocity.magnitude;
         rb.velocity += tweak;
+        float after = rb.velocity.magnitude;
+        Debug.Log("Tweak ball speed: before " + before + " after " + after);
     }
 
 

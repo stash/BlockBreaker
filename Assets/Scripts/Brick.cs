@@ -16,8 +16,6 @@ public class Brick : MonoBehaviour {
 
     private int timesHit;
 
-    private static ContactPoint2D[] contactPointTemp = new ContactPoint2D[1];
-
     void Start() {
         timesHit = 0;
         isBreakable = (tag == "Breakable");
@@ -36,8 +34,9 @@ public class Brick : MonoBehaviour {
         } else {
             // will be the "unbreakable" clip/vfx in this case
             PlayHitClip();
-            if (collision.GetContacts(contactPointTemp) >= 1) {
-                PlayBreakVFX(contactPointTemp[0].point);
+            Vector2 point;
+            if (Util.FirstCollisionPoint(collision, out point)) {
+                PlayBreakVFX(point);
             }
             
         }
@@ -46,7 +45,7 @@ public class Brick : MonoBehaviour {
     void BreakBrick() {
         breakableCount--;
         PlayBreakClip();
-        PlayBreakVFX(Util.V3to2(transform.position));
+        PlayBreakVFX(transform.position);
         Destroy(gameObject);
         OnDestroyed();
     }

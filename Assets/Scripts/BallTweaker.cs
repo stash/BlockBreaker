@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BallTweaker : MonoBehaviour {
-    public Vector2 min;
-    public Vector2 max;
+    public float magnitude = 0.05f;
 
     private void OnCollisionEnter2D(Collision2D collision) {
+        if (magnitude <= 0f) return;
+
+        Vector2 point;
+        if (!Util.FirstCollisionPoint(collision, out point))
+            return;
+
+        // speed up towards the center of the field
+        Vector2 tweak = Util.centerField - point;
+        tweak.Normalize();
+        tweak *= magnitude;
+
         BallController ball = collision.gameObject.GetComponent<BallController>();
         if (!ball) return;
-        Vector2 tweak = new Vector2(
-            Random.Range(min.x, max.x),
-            Random.Range(min.y, max.y)
-        );
+        Debug.Log("tweak " + tweak.x + " " + tweak.y);
         ball.TweakVelocity(tweak);
     }
 }

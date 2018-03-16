@@ -650,8 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3885cc42a4b584f83d27d7cdab3bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: {x: 0.01, y: -0.1}
-  max: {x: 0.05, y: 0.1}
+  magnitude: 0.05
 --- !u!114 &114208795599123104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -699,8 +698,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3885cc42a4b584f83d27d7cdab3bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: {x: -0.05, y: -0.1}
-  max: {x: 0.05, y: 0.125}
+  magnitude: 0.05
 --- !u!114 &114487200749725872
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -712,8 +710,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3885cc42a4b584f83d27d7cdab3bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: {x: -0.1, y: 0}
-  max: {x: 0.1, y: 0}
+  magnitude: 0.05
 --- !u!114 &114552368462692406
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -725,8 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca3885cc42a4b584f83d27d7cdab3bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: {x: -0.01, y: -0.1}
-  max: {x: 0.05, y: 0.1}
+  magnitude: 0.05
 --- !u!114 &114779600014999874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -739,7 +735,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   launchVelocity: {x: 1, y: 10}
-  tweakMagnitude: 0.1
   explodeVFX: {fileID: 1655858688069206, guid: fa607e88f5f79da448009f29117a8ab4, type: 2}
 --- !u!114 &114810649257051878
 MonoBehaviour:
@@ -765,7 +760,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ff8d3e26c11394e9f247e36ca8bbf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoPlay: 1
+  autoPlay: 0
 --- !u!114 &114918374407172252
 MonoBehaviour:
   m_ObjectHideFlags: 1
