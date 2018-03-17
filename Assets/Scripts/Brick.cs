@@ -51,11 +51,11 @@ public class Brick : MonoBehaviour {
     }
 
     void PlayBreakClip() {
-        AudioSource.PlayClipAtPoint(breakClip, transform.position);
+        FindObjectOfType<AudioController>().PlayPannedEffectClip(breakClip, transform.position.x);
     }
 
     void PlayHitClip() {
-        AudioSource.PlayClipAtPoint(hitClip, transform.position);
+        FindObjectOfType<AudioController>().PlayPannedEffectClip(hitClip, transform.position.x);
     }
 
     void PlayBreakVFX(Vector2 relativeTo) {

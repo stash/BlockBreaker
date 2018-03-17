@@ -575,38 +575,6 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4123787300949906, guid: 3be706303f1e07a4a820cef0a74b1a21, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4123787300949906, guid: 3be706303f1e07a4a820cef0a74b1a21, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4123787300949906, guid: 3be706303f1e07a4a820cef0a74b1a21, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4123787300949906, guid: 3be706303f1e07a4a820cef0a74b1a21, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4123787300949906, guid: 3be706303f1e07a4a820cef0a74b1a21, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4123787300949906, guid: 3be706303f1e07a4a820cef0a74b1a21, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4123787300949906, guid: 3be706303f1e07a4a820cef0a74b1a21, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4123787300949906, guid: 3be706303f1e07a4a820cef0a74b1a21, type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 82086179536480194, guid: 3be706303f1e07a4a820cef0a74b1a21,
         type: 2}
       propertyPath: m_audioClip
@@ -617,10 +585,9 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: fa695c62da246fc40b1115e5f1f8b5e5, type: 3}
-    - target: {fileID: 82086179536480194, guid: 3be706303f1e07a4a820cef0a74b1a21,
-        type: 2}
-      propertyPath: BypassReverbZones
-      value: 1
+    - target: {fileID: 4123787300949906, guid: 3be706303f1e07a4a820cef0a74b1a21, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3be706303f1e07a4a820cef0a74b1a21, type: 2}

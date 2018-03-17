@@ -4,19 +4,11 @@ public class AudioLoopWithIntro : MonoBehaviour {
     public AudioSource introSource;
     public AudioSource loopSource;
 
-    static AudioLoopWithIntro instance;
-
-    void Awake() {
-        if (instance != null) {
-            Destroy(gameObject);
-            return;
-        }
-        instance = this;
+    private void Awake() {
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start() {
-        DontDestroyOnLoad(gameObject);
-
         double introEnd = AudioSettings.dspTime + introSource.clip.length;
         // start the intro clip immediately
         introSource.PlayScheduled(AudioSettings.dspTime);
