@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clipPrefab: {fileID: 1828163529639754, guid: faf507035b99ab5429421b5b50fc993f, type: 2}
   panFactor: 0.75
+  webGLVolume: 0.8
 --- !u!114 &114979977309109254
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -231,3 +232,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introSource: {fileID: 82086179536480194}
   loopSource: {fileID: 82837832575979442}
+  webGLVolume: 0.25
