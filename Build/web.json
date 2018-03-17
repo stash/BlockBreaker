@@ -2,6 +2,8 @@
 "companyName": "DefaultCompany",
 "productName": "BlockBreaker",
 "dataUrl": "web.data.unityweb",
+"wasmCodeUrl": "web.wasm.code.unityweb",
+"wasmFrameworkUrl": "web.wasm.framework.unityweb",
 "asmCodeUrl": "web.asm.code.unityweb",
 "asmMemoryUrl": "web.asm.memory.unityweb",
 "asmFrameworkUrl": "web.asm.framework.unityweb",
