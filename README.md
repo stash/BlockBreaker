@@ -2,7 +2,7 @@
 
 Break-Out/Arkanoid clone in Unity, based on https://www.udemy.com/unitycourse/learn/v4/overview
 
-Play it on the web here: https://stash.github.io/BlockBreaker/ (known issue: the sound effects don't seem to pan properly on the web)
+Play it on the web here: https://stash.github.io/BlockBreaker/ (known issue: audio is all kinds of messed up when playing via web; song doesn't loop properly and the mix is really unbalanced)
 
 ## Improvements over stock tutorial
 
@@ -22,8 +22,8 @@ Wanted to challenge myself in a few different areas instead of sticking to the c
 1. Composed BGM in [OpenMPT](https://openmpt.org/) (though the "meat" of the song is from looperman: https://www.looperman.com/loops/detail/120273/aqua-synth-130bpm-by-ofekz83-free-130bpm-techno-synth-loop and https://www.looperman.com/loops/detail/121895/arp-synth-130bpm-by-ofekz83-free-130bpm-techno-synth-loop)
 1. Custom "AudioLoopWithIntro" class to handle the fact that the song has a non-looping introduction then a looping main part; Unity 2017.3 doesn't provide this functionality out of the box.
 1. Added nicer sound effects gathered from other free Unity tutorials (SpaceShooter), [FreeSound](https://freesound.org) or hand-edited in Audacity (e.g. the "crack" clip is an isolated and slowed down version of a wooden board breaking).
-1. Instead of using AudioSource.PlayAtPoint(), sound effects are stereo panned based on the horizontal position and are sent to a mixer.
-1. The AudioMixers are set up so that the main background music can be "ducked" when a sound effect is playing.
+1. Instead of using AudioSource.PlayClipAtPoint(), sound effects are stereo panned based on the horizontal position and are sent to a mixer. (Doesn't work on web; just falls-back to AudioSource.PlayClipAtPoint)
+1. The AudioMixers are set up so that the main background music can be "ducked" when a sound effect is playing. (Doesn't work on web)
 
 **Gameplay:**
 
