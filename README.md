@@ -2,6 +2,8 @@
 
 Break-Out/Arkanoid clone in Unity, based on https://www.udemy.com/unitycourse/learn/v4/overview
 
+Play it on the web here: https://stash.github.io/BlockBreaker/ (known issue: the sound effects don't seem to pan properly on the web)
+
 ## Improvements over stock tutorial
 
 Wanted to challenge myself in a few different areas instead of sticking to the cut-and-dry tutorial and make something a little bit more polished.
